@@ -30,20 +30,11 @@ Install these prerequisites before proceeding-
  pip3 install opencv-python
 ```
 
-### Method 1 : Using the built model 
+### Method : Using the built model 
 
 If you don't want to train the classifier from scratch, you can make the use of `fertestcustom.py` directly as the the repository already has `fer.json` (trained model) and `fer.h5` (parameters) which can be used to predict emotion on any test image present in the folder. You can modify `fertestcustom.py` according to your requirements and use it to predict fatial emotion in any use case.
 
-### Method 2 : Build from scratch
-Clone this repository using-
-```
-git clone https://github.com/gitshanks/fer2013.git
-```
-Download and extract the dataset from Kaggle link above.
 
-Run the `preprocessing.py` file, which would generate `fadataX.npy` and `flabels.npy` files for you.
-
-Run the `fertrain.py` file,  this would take sometime depending on your processor and gpu. Took around 1 hour for with an Intel Core i7-7700K 4.20GHz processor and an Nvidia GeForce GTX 1060 6GB gpu, with tensorflow running on gpu support. This would create `modXtest.npy`, `modytest,npy`, `fer.json` and `fer.h5` file for you.
 
 ## Running the tests (Optional)
 
@@ -58,5 +49,3 @@ You can get the confusion matrix for this model by running `confmatrix.py` file.
 # Model Summary
 
 The layers in the Convolution Neural Network used in implementing this classifier can be summarized as follows. You can git a similar summary by decommenting the `model.summar()` function before executing `fertrain.py` file.
-
-![layers](https://user-images.githubusercontent.com/28602282/48034278-f5435f80-e11b-11e8-8390-585e34fc18ae.png)
